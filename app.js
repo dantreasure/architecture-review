@@ -22,8 +22,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 })
 
 
-app.controller('main-ctrl', function($scope){
+app.controller('main-ctrl', function($scope, particulates){
 	$scope.message = "How?????";
+	particulates.get().then(function(response){
+		$scope.particulates = response.data.results[0];
+	})
+
 })
 
 app.controller('users-ctrl', function($scope){
@@ -41,6 +45,7 @@ app.factory('particulates', function($http){
 	api.get = function(){
 		return $http.get('http://apis.is/particulates');
 	}
+	return api;
 })
 
 
