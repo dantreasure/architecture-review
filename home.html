@@ -1,3 +1,7 @@
 <h1>Home</h1>
 <h2>{{message}}</h2>
-<pre>{{particulates}}</pre>
+<pre>
+	<ul ng-repeat="particulate in particulates">
+		<li>{{particulate}}</li>
+	</ul>
+</pre>
