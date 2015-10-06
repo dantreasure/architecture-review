@@ -15,7 +15,21 @@ app.config(function($stateProvider, $urlRouterProvider){
 			controller: 'users-ctrl'
 		})
 
+});
+
+app.service('users', function($http) {
+	this.get = function() {
+		return $http.get("http://localhost:3000/users");
+	}
 })
+
+app.factory('particulates', function($http) {
+	var api = {};
+	api.get = funciton() {
+		return $http.get('http://apis.is/particulates');
+	}
+})
+
 app.controller('main-ctrl', function($scope){
 	$scope.message = "How?????";
 })
