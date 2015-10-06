@@ -36,7 +36,16 @@ app.controller('main-ctrl', function($scope, particulates){
 	particulates.get().then(function(response){
 		$scope.particulates = response.data.results[0];
 	})
-})
+});
+
+//TODO: Inject the users service in to this controller and call the get
+// method and place the response object on the scope
 app.controller('users-ctrl', function($scope){
 	$scope.message = "Why?????";
-})
+});
+
+
+
+
+
+
