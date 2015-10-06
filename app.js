@@ -29,3 +29,20 @@ app.controller('main-ctrl', function($scope){
 app.controller('users-ctrl', function($scope){
 	$scope.message = "Why?????";
 })
+
+app.service('users', function($http){
+	this.get = function(){
+		return $http.get('http://localhost:3000/users');
+	}
+})
+
+app.factory('particulates', function($http){
+	var api = {};
+	api.get = function(){
+		return $http.get('http://apis.is/particulates');
+	}
+})
+
+
+
+
