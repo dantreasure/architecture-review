@@ -7,6 +7,10 @@
 	<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
 <body class="container">
+	<ul class="nav nav-tabs">
+	  <li role="presentation" class="active"><a ui-sref="home">Home</a></li>
+	  <li role="presentation"><a ui-sref="users">Users</a></li>
+	</ul>
 	<div ui-view></div>
 	<h1>{{message}}</h1>
 	<script src="app.js"></script>

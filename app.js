@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 		.state('home', {
 			url: '/',
 			templateUrl: 'home.html',
-			controller: 'main-ctrl'
+			controller: 'users-ctrl'
 		})
 		.state('users', {
 			url: '/users',
@@ -20,28 +20,18 @@ app.config(function($stateProvider, $urlRouterProvider){
 app.service('users', function($http) {
 	this.get = function() {
 		return $http.get("http://localhost:3000/users");
+	this.post = function(users) {
+		return $http.post('http://localhost:3000/users', users)
+		}
 	}
 })
-
-app.factory('particulates', function($http) {
-	var api = {};
-	api.get = function() {
-		return $http.get('http://apis.is/particulates');
-	}
-	return api;
-})
-
-app.controller('main-ctrl', function($scope, particulates){
-	$scope.message = "How?????";
-	particulates.get().then(function(response){
-		$scope.particulates = response.data.results[0];
-	})
-});
 
 //TODO: Inject the users service in to this controller and call the get
 // method and place the response object on the scope
-app.controller('users-ctrl', function($scope){
-	$scope.message = "Why?????";
+app.controller('users-ctrl', function($scope, users){
+	users.get().then(function(response){
+		$scope.users = response.data;
+	})
 });
 
 

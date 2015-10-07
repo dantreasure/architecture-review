@@ -1,4 +1,22 @@
-<!-- TODO: Place an element to display the users that the controller fetches (ng-repeat) -->
-
 <h1>Users</h1>
-<h2>{{message}}</h2>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<pre>
+	<ul ng-repeat="user in users">
+		<span><strong>User ID:</strong> {{" " + user.id }}</span>
+		<span><strong>User Name:</strong> {{ " " + user.name }}</span>
+		<span><strong>Email:</strong> {{ " " + user.email }}</span>
+		<hr></hr>
+	</ul>
+</pre>
