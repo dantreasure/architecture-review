@@ -30,9 +30,14 @@ app.controller('main-ctrl', function($scope, particulates){
 
 })
 
-app.controller('users-ctrl', function($scope){
-	$scope.message = "Why?????";
+
+app.controller('users-ctrl', function($scope, users){
+	users.get().then(function(data){
+        $scope.allUsers = data.data;
+    });
 })
+
+
 
 app.service('users', function($http){
 	this.get = function(){
