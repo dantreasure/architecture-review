@@ -8,12 +8,16 @@
 </head>
 <body class="container">
 	<nav class="navbar">
-		<ul class="nav nav-pills">
+		<ul class="nav nav-pills nav-justified">
   			<li role="presentation" class="active"><a ui-sref="home">Home</a></li>
   			<li role="presentation"><a ui-sref="users">Users</a></li>
-			</ul>
+		</ul>
 	</nav>
 	<div ui-view></div>
 	<script src="app.js"></script>
+	<script src="home/home-ctrl.js"></script>
+	<script src="home/home-service.js"></script>
+	<script src="users/users-ctrl.js"></script>
+	<script src="users/users-service.js"></script>
 </body>
 </html>
